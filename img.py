@@ -13,7 +13,7 @@ image_name = path_to_image[k:]
 if os.path.exists(path_to_image):
     image = Image.open(path_to_image)
     edited_image = image.filter(ImageFilter.DETAIL)
-    edited_image = edited_image.filter(ImageFilter.SHARPEN).convert('L')
+    edited_image = edited_image.filter(ImageFilter.SHARPEN).rotate(-90)
     edited_image = edited_image.filter(ImageFilter.SMOOTH)
 
     edit.save('dest_path/{clean_name}new{image_name}')
